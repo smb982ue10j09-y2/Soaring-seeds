@@ -3,35 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClearSpring SmartWater - Intelligent Backwash Water Purification System for Plateau Pastoral Areas</title>
+    <title>PurePasture | Smart Backwashing Safe Water System for Plateau Pastoral Areas | Conrad Challenge Project</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* ===== Global Variables & Reset ===== */
         :root {
-            --primary-blue: #0A2463;
-            --secondary-blue: #3A86FF;
-            --accent-teal: #38B6A6;
-            --light-teal: #5CE1E6;
-            --warm-orange: #FF6B35;
-            --deep-purple: #6C4AB6;
-            --light-bg: #F8FAFF;
-            --dark-text: #1E2A47;
-            --light-text: #5A6C8D;
-            --white: #FFFFFF;
-            --gradient-primary: linear-gradient(135deg, #0A2463 0%, #3A86FF 100%);
-            --gradient-accent: linear-gradient(135deg, #38B6A6 0%, #5CE1E6 100%);
-            --gradient-warm: linear-gradient(135deg, #FF6B35 0%, #FF9E6D 100%);
-            --gradient-dark: linear-gradient(135deg, #0A2463 0%, #1A2F6B 100%);
-            --gradient-purple: linear-gradient(135deg, #6C4AB6 0%, #8D72E1 100%);
-            --shadow-light: 0 10px 30px rgba(10, 36, 99, 0.08);
-            --shadow-medium: 0 20px 40px rgba(10, 36, 99, 0.12);
-            --shadow-heavy: 0 25px 60px rgba(10, 36, 99, 0.15);
-            --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --border-radius-sm: 12px;
-            --border-radius-md: 20px;
-            --border-radius-lg: 30px;
-            --border-radius-xl: 40px;
+            --deep-ocean: #0a1a3a;         /* Deep Ocean Blue - Tech Foundation */
+            --ocean-blue: #0066cc;         /* Ocean Blue */
+            --aqua-tech: #00d4ff;          /* Tech Aqua - Ocean Tech Feel */
+            --wave-teal: #2dd4bf;          /* Wave Teal */
+            --light-cyan: #e6f7ff;         /* Light Cyan Background */
+            --white: #ffffff;
+            --gray-100: #f1f5f9;
+            --gray-800: #1e293b;
+            --shadow-tech: 0 10px 30px rgba(0, 212, 255, 0.15);
+            --shadow-deep: 0 15px 40px rgba(0, 0, 0, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
 
         * {
@@ -42,1276 +30,1681 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
         }
 
         body {
-            font-family: 'Montserrat', 'Poppins', sans-serif;
+            font-family: 'Exo 2', sans-serif;
             line-height: 1.7;
-            color: var(--dark-text);
-            background-color: var(--white);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        /* Enhanced Hero Section */
-        .hero-cover {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: var(--gradient-dark);
-            padding-top: 80px;
-        }
-
-        .hero-bg-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(58, 134, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(92, 225, 230, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
-            animation: bgPulse 15s ease-in-out infinite alternate;
-        }
-
-        @keyframes bgPulse {
-            0% { opacity: 0.5; }
-            100% { opacity: 0.8; }
-        }
-
-        .hero-content-container {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            max-width: 1400px;
-            padding: 0 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero-logo-container {
-            margin-bottom: 3rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .hero-logo {
-            width: 140px;
-            height: 140px;
-            background: var(--gradient-accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            position: relative;
-            box-shadow: 0 25px 50px rgba(56, 182, 166, 0.4);
-            animation: logoFloat 6s ease-in-out infinite, logoGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            33% { transform: translateY(-15px) rotate(5deg); }
-            66% { transform: translateY(10px) rotate(-5deg); }
-        }
-
-        @keyframes logoGlow {
-            0% { box-shadow: 0 25px 50px rgba(56, 182, 166, 0.4); }
-            100% { box-shadow: 0 30px 60px rgba(56, 182, 166, 0.6); }
-        }
-
-        .hero-logo-inner {
-            width: 90px;
-            height: 90px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            color: var(--accent-teal);
-            animation: innerSpin 20s linear infinite;
-        }
-
-        @keyframes innerSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .hero-title {
-            font-size: 4.5rem;
-            font-weight: 900;
             color: var(--white);
-            margin-bottom: 0.5rem;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            letter-spacing: 1px;
+            background-color: var(--deep-ocean);
+            overflow-x: hidden;
             position: relative;
-            display: inline-block;
         }
 
-        .hero-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 5px;
-            background: var(--gradient-accent);
-            border-radius: 5px;
-            animation: linePulse 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes linePulse {
-            0% { width: 150px; opacity: 0.8; }
-            100% { width: 200px; opacity: 1; }
-        }
-
-        .hero-subtitle {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: var(--light-teal);
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            animation: subtitleFade 2s ease-out;
-        }
-
-        @keyframes subtitleFade {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-description {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            box-shadow: var(--shadow-medium);
-        }
-
-        .btn:before {
-            content: '';
-            position: absolute;
+        /* ===== Enhanced Background Animations ===== */
+        .background-container {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            transition: var(--transition);
-        }
-
-        .btn-primary {
-            background: var(--gradient-accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(56, 182, 166, 0.5);
-        }
-
-        .btn-primary:hover:before {
-            transform: scale(1.1);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.7);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-            transform: translateY(-8px) scale(1.05);
-        }
-
-        /* Animated Product Showcase */
-        .product-showcase {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            margin: 2rem auto 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1200px;
-        }
-
-        .product-3d-container {
-            width: 320px;
-            height: 320px;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: containerFloat 8s ease-in-out infinite;
-        }
-
-        @keyframes containerFloat {
-            0%, 100% { transform: translateY(0) rotateX(10deg); }
-            50% { transform: translateY(-20px) rotateX(10deg); }
-        }
-
-        .product-3d {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: rotate3d 25s infinite linear;
-        }
-
-        @keyframes rotate3d {
-            0% { transform: rotateY(0deg) rotateX(15deg); }
-            100% { transform: rotateY(360deg) rotateX(15deg); }
-        }
-
-        .product-side {
-            position: absolute;
-            width: 320px;
-            height: 320px;
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backface-visibility: hidden;
-            box-shadow: 
-                inset 0 0 30px rgba(255, 255, 255, 0.1),
-                0 20px 40px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            transition: all 0.5s ease;
         }
 
-        .product-front {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-            transform: translateZ(160px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .product-back {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.15) 100%);
-            transform: rotateY(180deg) translateZ(160px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .product-left {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
-            transform: rotateY(-90deg) translateZ(160px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .product-right {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.1) 100%);
-            transform: rotateY(90deg) translateZ(160px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .product-top {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-            transform: rotateX(90deg) translateZ(160px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .product-bottom {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.15) 100%);
-            transform: rotateX(-90deg) translateZ(160px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .product-screen {
-            width: 220px;
-            height: 70px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--light-teal);
-            font-weight: 600;
-            font-size: 1.3rem;
-            box-shadow: 
-                inset 0 0 15px rgba(0, 0, 0, 0.5),
-                0 10px 20px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            animation: screenPulse 2s infinite alternate;
-        }
-
-        @keyframes screenPulse {
-            0% { box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 0 10px 20px rgba(0, 0, 0, 0.3); }
-            100% { box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7), 0 15px 30px rgba(0, 0, 0, 0.5); }
-        }
-
-        .product-screen:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(92, 225, 230, 0.3), transparent);
-            animation: shimmer 3s infinite linear;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .product-button {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 15px 30px rgba(56, 182, 166, 0.5);
-            cursor: pointer;
-            transition: var(--transition);
-            position: absolute;
-            bottom: 50px;
-            animation: buttonPulse 2s infinite alternate;
-        }
-
-        @keyframes buttonPulse {
-            0% { transform: scale(1); box-shadow: 0 15px 30px rgba(56, 182, 166, 0.5); }
-            100% { transform: scale(1.1); box-shadow: 0 20px 40px rgba(56, 182, 166, 0.7); }
-        }
-
-        .product-button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 25px 50px rgba(56, 182, 166, 0.8);
-            animation: none;
-        }
-
-        /* Enhanced Floating Elements */
-        .floating-elements {
+        /* Dynamic Grid Background */
+        .grid-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            z-index: 1;
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            animation: grid-move 20s linear infinite;
         }
 
-        .floating-element {
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 30px); }
+        }
+
+        /* Flowing Lines Effect */
+        .flow-lines {
             position: absolute;
-            width: 70px;
-            height: 70px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            animation: floatElement 8s ease-in-out infinite;
-            transition: all 0.5s ease;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
         }
 
-        .floating-element:nth-child(1) {
-            top: 15%;
-            left: 10%;
-            background: var(--gradient-warm);
-            animation-delay: 0s;
+        .flow-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, var(--aqua-tech), transparent);
+            height: 1px;
+            opacity: 0.1;
+            animation: flow-line 15s linear infinite;
         }
 
-        .floating-element:nth-child(2) {
-            top: 25%;
-            right: 15%;
-            background: var(--gradient-primary);
-            animation-delay: 1s;
+        @keyframes flow-line {
+            0% {
+                transform: translateX(-100%) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.1;
+            }
+            90% {
+                opacity: 0.1;
+            }
+            100% {
+                transform: translateX(100vw) rotate(0deg);
+                opacity: 0;
+            }
         }
 
-        .floating-element:nth-child(3) {
-            bottom: 30%;
-            left: 15%;
-            background: var(--gradient-accent);
-            animation-delay: 2s;
+        /* Dynamic Light Dots */
+        .light-dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        .floating-element:nth-child(4) {
-            bottom: 20%;
-            right: 10%;
-            background: var(--gradient-purple);
-            animation-delay: 3s;
+        .light-dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--aqua-tech);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--aqua-tech);
+            opacity: 0;
+            animation: light-dot 8s infinite linear;
         }
 
-        .floating-element:nth-child(5) {
-            top: 60%;
-            left: 5%;
-            background: var(--gradient-accent);
-            animation-delay: 4s;
+        @keyframes light-dot {
+            0% {
+                transform: translateY(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+                transform: translateY(-10px) scale(1);
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) scale(0);
+                opacity: 0;
+            }
         }
 
-        .floating-element:nth-child(6) {
-            top: 40%;
-            right: 5%;
-            background: var(--gradient-warm);
-            animation-delay: 5s;
-        }
-
-        @keyframes floatElement {
-            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-            25% { transform: translateY(-25px) rotate(10deg) scale(1.1); }
-            50% { transform: translateY(10px) rotate(-5deg) scale(1.05); }
-            75% { transform: translateY(-15px) rotate(5deg) scale(1.08); }
-        }
-
-        /* Enhanced Stats Overlay */
-        .stats-overlay {
+        /* Water Ripple Effect */
+        .water-ripples {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            background: rgba(10, 36, 99, 0.85);
-            backdrop-filter: blur(15px);
-            padding: 2.5rem 0;
-            z-index: 10;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: var(--border-radius-md);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            transition: var(--transition);
-            position: relative;
+            height: 100%;
             overflow: hidden;
         }
 
-        .stat-card:before {
-            content: '';
+        .ripple {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            background: radial-gradient(circle at center, transparent 30%, rgba(0, 212, 255, 0.05) 70%, transparent 100%);
+            transform: scale(0);
             opacity: 0;
-            transition: var(--transition);
+            animation: ripple-expand 15s infinite linear;
         }
 
-        .stat-card:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        @keyframes ripple-expand {
+            0% {
+                transform: scale(0);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
         }
 
-        .stat-card:hover:before {
-            opacity: 1;
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--light-teal);
-            margin-bottom: 0.5rem;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            display: inline-block;
-            position: relative;
-        }
-
-        .stat-number:after {
-            content: attr(data-suffix);
-            font-size: 1.5rem;
-            font-weight: 600;
-            position: absolute;
-            right: -1.5rem;
-            top: 0;
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.9);
-            letter-spacing: 0.5px;
-        }
-
-        /* Enhanced Scroll Indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 180px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: rgba(255, 255, 255, 0.8);
-            z-index: 10;
-            animation: fadeInUp 2s ease-out 1s both;
-        }
-
-        .scroll-text {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .scroll-arrow {
-            width: 35px;
-            height: 60px;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            border-radius: 20px;
-            position: relative;
-        }
-
-        .scroll-arrow:before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 8px;
-            height: 8px;
-            background: var(--light-teal);
-            border-radius: 50%;
-            animation: scroll 2.5s infinite cubic-bezier(0.65, 0, 0.35, 1);
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(-50%) translateY(0); opacity: 1; }
-            100% { transform: translateX(-50%) translateY(25px); opacity: 0; }
-        }
-
-        /* Animated Particles */
-        .particles {
+        /* Dynamic Data Stream */
+        .data-stream {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            overflow: hidden;
+        }
+
+        .data-bit {
+            position: absolute;
+            color: var(--aqua-tech);
+            font-size: 12px;
+            font-family: 'Orbitron', monospace;
+            opacity: 0;
+            animation: data-fall linear infinite;
+            text-shadow: 0 0 5px var(--aqua-tech);
+        }
+
+        @keyframes data-fall {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Content Container - Ensure content stays above background */
+        .content-container {
+            position: relative;
+            z-index: 1;
+            background: rgba(10, 26, 58, 0.7);
+        }
+
+        /* ===== Other Styles Remain ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, var(--aqua-tech), var(--wave-teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--aqua-tech), var(--wave-teal));
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--aqua-tech);
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(90deg, var(--ocean-blue), var(--aqua-tech));
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-tech);
+            position: relative;
+            overflow: hidden;
             z-index: 1;
         }
 
-        .particle {
+        .btn::before {
+            content: '';
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            animation: particleFloat linear infinite;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--aqua-tech), var(--ocean-blue));
+            transition: var(--transition);
+            z-index: -1;
         }
 
-        @keyframes particleFloat {
-            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+        .btn:hover::before {
+            left: 0;
         }
 
-        /* Enhanced Navigation */
-        .navbar {
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--aqua-tech);
+            color: var(--aqua-tech);
+        }
+
+        .btn-outline::before {
+            background: var(--aqua-tech);
+        }
+
+        .btn-outline:hover {
+            color: var(--deep-ocean);
+        }
+
+        /* ===== Header & Navigation ===== */
+        header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(10, 36, 99, 0.95);
-            backdrop-filter: blur(15px);
-            padding: 1.2rem 2rem;
+            background-color: rgba(10, 26, 58, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            z-index: 1000;
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .navbar.scrolled {
-            padding: 1rem 2rem;
-            background: rgba(10, 36, 99, 0.98);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: var(--transition);
-        }
-
-        .logo-container:hover {
-            transform: translateY(-3px);
         }
 
         .logo {
-            width: 55px;
-            height: 55px;
-            background: var(--gradient-accent);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, var(--aqua-tech) 0%, var(--ocean-blue) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--deep-ocean);
+            font-size: 1.5rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(56, 182, 166, 0.4);
-            animation: logoSpin 20s linear infinite;
+            animation: logo-pulse 3s infinite alternate;
         }
 
-        @keyframes logoSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes logo-pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+            100% { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 212, 255, 0.8); }
         }
 
-        .logo-inner {
-            width: 35px;
-            height: 35px;
-            background: var(--white);
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 30%, rgba(255, 255, 255, 0.2) 70%);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--accent-teal);
-            position: relative;
-            z-index: 2;
         }
 
         .logo-text {
-            display: flex;
-            flex-direction: column;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
 
-        .logo-text h1 {
-            font-size: 1.6rem;
-            margin: 0;
-            line-height: 1;
-            background: var(--gradient-accent);
+        .logo-text span {
+            background: linear-gradient(90deg, var(--aqua-tech), var(--wave-teal));
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
+            color: transparent;
         }
 
-        .logo-text p {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin: 0;
-        }
-
-        .nav-links {
+        nav ul {
             display: flex;
-            gap: 2rem;
-            align-items: center;
+            list-style: none;
+            gap: 35px;
         }
 
-        .nav-link {
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
-            font-size: 1.05rem;
+        nav a {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
             position: relative;
             padding: 5px 0;
-            transition: var(--transition);
         }
 
-        .nav-link:after {
+        nav a:hover {
+            color: var(--aqua-tech);
+        }
+
+        nav a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
-            height: 3px;
-            background: var(--gradient-accent);
-            border-radius: 3px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--aqua-tech), var(--wave-teal));
             transition: var(--transition);
         }
 
-        .nav-link:hover {
-            color: var(--light-teal);
-        }
-
-        .nav-link:hover:after {
+        nav a:hover::after {
             width: 100%;
         }
 
-        .nav-btn {
-            margin-left: 1.5rem;
-        }
-
-        .mobile-menu-btn {
+        .mobile-toggle {
             display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: white;
+            font-size: 1.5rem;
             cursor: pointer;
-            z-index: 1001;
-            transition: var(--transition);
+            color: var(--aqua-tech);
         }
 
-        .mobile-menu-btn:hover {
-            color: var(--light-teal);
+        /* ===== Hero Section ===== */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 150px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Animated Section Titles */
-        .section-title {
-            font-size: 3.5rem;
-            color: var(--primary-blue);
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #ffffff, var(--aqua-tech));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            line-height: 1.1;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: title-glow 3s infinite alternate;
+        }
+
+        @keyframes title-glow {
+            0% { text-shadow: 0 0 30px rgba(0, 212, 255, 0.3); }
+            100% { text-shadow: 0 0 40px rgba(0, 212, 255, 0.6); }
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            color: var(--wave-teal);
+            margin-bottom: 40px;
+            font-weight: 500;
+            letter-spacing: 1px;
             position: relative;
             display: inline-block;
-            margin-bottom: 3rem;
+            padding: 0 20px;
+            animation: tagline-float 4s infinite ease-in-out;
+        }
+
+        @keyframes tagline-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-tagline::before, .hero-tagline::after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--aqua-tech);
+            font-size: 1.2rem;
+        }
+
+        .hero-tagline::before {
+            left: 0;
+        }
+
+        .hero-tagline::after {
+            right: 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .hero-visual {
+            margin-top: 80px;
+            position: relative;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            perspective: 1000px;
+        }
+
+        .device-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .device-img {
+            width: 80%;
+            max-width: 700px;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+            animation: float-rotate 12s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes float-rotate {
+            0%, 100% { 
+                transform: translateY(0) rotateY(0deg);
+            }
+            33% { 
+                transform: translateY(-20px) rotateY(5deg);
+            }
+            66% { 
+                transform: translateY(-10px) rotateY(-5deg);
+            }
+        }
+
+        /* ===== Problem Section ===== */
+        .problem-section {
+            background-color: rgba(10, 26, 58, 0.7);
+            position: relative;
+        }
+
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .problem-card {
+            background: linear-gradient(145deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.05));
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow-tech);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .problem-card h3 {
+            color: var(--aqua-tech);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .problem-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* ===== Solution Section ===== */
+        .solution-section {
+            position: relative;
+        }
+
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.05));
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow-tech);
+            transition: var(--transition);
             text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--aqua-tech), var(--wave-teal));
+            z-index: 2;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(45, 212, 191, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--aqua-tech);
+            font-size: 2.5rem;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotate(360deg);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(45, 212, 191, 0.2));
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--aqua-tech);
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        /* ===== Key Metrics Section ===== */
+        .metrics-section {
+            background-color: rgba(10, 26, 58, 0.7);
+            position: relative;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 40px 25px;
+            background: linear-gradient(145deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.05));
+            border-radius: 20px;
+            box-shadow: var(--shadow-tech);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.25);
+        }
+
+        .metric-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--aqua-tech);
+            line-height: 1;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .metric-desc {
+            font-size: 1.1rem;
+            color: var(--wave-teal);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .metric-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 15px;
+        }
+
+        /* ===== Unique Value Proposition ===== */
+        .uvp-section {
+            position: relative;
+        }
+
+        .uvp-content {
+            background: linear-gradient(145deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.05));
+            padding: 60px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 40px;
+        }
+
+        /* ===== Verification Progress ===== */
+        .verification-section {
+            position: relative;
+        }
+
+        .verification-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--aqua-tech);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+            animation: timeline-pulse 2s infinite;
+        }
+
+        @keyframes timeline-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.8); }
+            50% { box-shadow: 0 0 30px rgba(0, 212, 255, 1); }
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--aqua-tech), transparent);
+            z-index: 1;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-content {
+            margin-top: 60px;
+            padding: 25px;
+            background: rgba(0, 102, 204, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        /* ===== Market Strategy ===== */
+        .strategy-section {
+            background-color: rgba(10, 26, 58, 0.7);
+            position: relative;
+        }
+
+        .strategy-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .strategy-card {
+            background: linear-gradient(145deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.05));
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow-tech);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .strategy-card h3 {
+            color: var(--aqua-tech);
+            margin-bottom: 20px;
+        }
+
+        /* ===== Team Section ===== */
+        .team-section {
+            position: relative;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .member-card {
+            background: linear-gradient(145deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.05));
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-tech);
+            transition: var(--transition);
+            text-align: center;
+            padding-bottom: 30px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .member-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 212, 255, 0.2);
+        }
+
+        .member-header {
+            height: 100px;
+            background: linear-gradient(90deg, var(--ocean-blue), var(--aqua-tech));
+            position: relative;
+            margin-bottom: 70px;
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: -60px auto 20px;
+            border: 5px solid rgba(10, 26, 58, 0.9);
+            background: linear-gradient(135deg, var(--aqua-tech), var(--wave-teal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            color: var(--deep-ocean);
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .member-card:hover .member-avatar {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+
+        .member-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--aqua-tech);
+        }
+
+        .member-role {
+            color: var(--wave-teal);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .member-bio {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0 25px;
+            line-height: 1.6;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: linear-gradient(180deg, var(--deep-ocean) 0%, #050e1f 100%);
+            color: white;
+            padding: 80px 0 40px;
+            position: relative;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .footer-logo span {
+            background: linear-gradient(90deg, var(--aqua-tech), var(--wave-teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-about p {
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        .footer-contact h4,
+        .footer-links h4 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--aqua-tech);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-info i {
+            color: var(--aqua-tech);
+            width: 25px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+            display: inline-block;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--aqua-tech);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--aqua-tech);
+        }
+
+        .footer-links a:hover::after {
             width: 100%;
         }
 
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 6px;
-            background: var(--gradient-accent);
-            border-radius: 3px;
-            animation: titleLine 3s ease-in-out infinite alternate;
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
         }
 
-        @keyframes titleLine {
-            0% { width: 100px; }
-            100% { width: 150px; }
+        /* ===== Responsive Design ===== */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero-title {
-                font-size: 3.8rem;
+        @media (max-width: 900px) {
+            nav ul {
+                position: fixed;
+                top: 85px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background: rgba(10, 26, 58, 0.95);
+                backdrop-filter: blur(20px);
+                text-align: center;
+                padding: 40px 30px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                transition: var(--transition);
+                gap: 25px;
+                border-top: 1px solid rgba(0, 212, 255, 0.1);
+                border-bottom: 1px solid rgba(0, 212, 255, 0.1);
             }
-            
-            .hero-subtitle {
-                font-size: 1.8rem;
+            nav ul.active {
+                left: 0;
             }
-            
-            .product-3d-container {
-                width: 280px;
-                height: 280px;
+            .mobile-toggle {
+                display: block;
             }
-            
-            .product-side {
-                width: 280px;
-                height: 280px;
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
             }
-            
-            .product-front {
-                transform: translateZ(140px);
+            .btn {
+                width: 100%;
+                max-width: 300px;
             }
-            
-            .product-back {
-                transform: rotateY(180deg) translateZ(140px);
+            .verification-timeline {
+                flex-direction: column;
             }
-            
-            .product-left {
-                transform: rotateY(-90deg) translateZ(140px);
+            .timeline-item::after {
+                left: 50px;
+                top: 40px;
+                height: calc(100% + 40px);
             }
-            
-            .product-right {
-                transform: rotateY(90deg) translateZ(140px);
-            }
-            
-            .product-top {
-                transform: rotateX(90deg) translateZ(140px);
-            }
-            
-            .product-bottom {
-                transform: rotateX(-90deg) translateZ(140px);
+            .timeline-item::before {
+                left: 50px;
             }
         }
 
         @media (max-width: 768px) {
-            .hero-cover {
-                padding-top: 100px;
+            section {
+                padding: 80px 0;
             }
-            
-            .hero-title {
-                font-size: 2.8rem;
+            .hero {
+                padding-top: 150px;
+                padding-bottom: 120px;
             }
-            
-            .hero-subtitle {
-                font-size: 1.5rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            
-            .hero-description {
-                font-size: 1.1rem;
-                padding: 0 1rem;
+            .hero-tagline {
+                font-size: 1.4rem;
             }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .product-3d-container {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .product-side {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .product-front {
-                transform: translateZ(120px);
-            }
-            
-            .product-back {
-                transform: rotateY(180deg) translateZ(120px);
-            }
-            
-            .product-left {
-                transform: rotateY(-90deg) translateZ(120px);
-            }
-            
-            .product-right {
-                transform: rotateY(90deg) translateZ(120px);
-            }
-            
-            .product-top {
-                transform: rotateX(90deg) translateZ(120px);
-            }
-            
-            .product-bottom {
-                transform: rotateX(-90deg) translateZ(120px);
-            }
-            
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .floating-element {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 80%;
-                height: 100vh;
-                background: var(--primary-blue);
-                flex-direction: column;
-                padding: 6rem 2rem 2rem;
-                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
-                z-index: 1000;
-                transition: var(--transition);
-                transform: translateX(100%);
-            }
-            
-            .nav-links.active {
-                display: flex;
-                transform: translateX(0);
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                z-index: 1001;
-            }
-            
-            .nav-btn {
-                margin-left: 0;
-                margin-top: 1rem;
+            .section-title h2 {
+                font-size: 2.2rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .hero-title {
+        @media (max-width: 576px) {
+            .hero h1 {
                 font-size: 2.2rem;
             }
-            
-            .hero-subtitle {
-                font-size: 1.3rem;
+            .hero-tagline {
+                font-size: 1.2rem;
             }
-            
-            .hero-logo {
-                width: 110px;
-                height: 110px;
+            .feature-card, .metric-card, .member-card {
+                padding: 30px 20px;
             }
-            
-            .hero-logo-inner {
-                width: 70px;
-                height: 70px;
-                font-size: 2.5rem;
-            }
-            
-            .stats-container {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
+            .metric-number {
+                font-size: 2.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Enhanced Hero Section -->
-    <section class="hero-cover" id="home">
-        <div class="hero-bg-overlay"></div>
-        
-        <!-- Animated Particles -->
-        <div class="particles" id="particles"></div>
-        
-        <!-- Floating Elements -->
-        <div class="floating-elements">
-            <div class="floating-element">
-                <i class="fas fa-tint"></i>
-            </div>
-            <div class="floating-element">
-                <i class="fas fa-solar-panel"></i>
-            </div>
-            <div class="floating-element">
-                <i class="fas fa-microchip"></i>
-            </div>
-            <div class="floating-element">
-                <i class="fas fa-mountain"></i>
-            </div>
-            <div class="floating-element">
-                <i class="fas fa-filter"></i>
-            </div>
-            <div class="floating-element">
-                <i class="fas fa-bolt"></i>
-            </div>
-        </div>
-        
-        <div class="hero-content-container">
-            <div class="hero-logo-container">
-                <div class="hero-logo">
-                    <div class="hero-logo-inner">
-                        <i class="fas fa-tint"></i>
-                    </div>
+    <!-- Background Animation Container -->
+    <div class="background-container">
+        <div class="grid-background"></div>
+        <div class="flow-lines" id="flowLines"></div>
+        <div class="light-dots" id="lightDots"></div>
+        <div class="water-ripples" id="waterRipples"></div>
+        <div class="data-stream" id="dataStream"></div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Header Navigation -->
+        <header>
+            <div class="container header-container">
+                <div class="logo">
+                    <div class="logo-icon">P</div>
+                    <div class="logo-text">Pure<span>Pasture</span></div>
                 </div>
-                
-                <h1 class="hero-title animate__animated animate__fadeInDown">ClearSpring SmartWater</h1>
-                <div class="hero-subtitle">One-Click Purification, Safeguarding Nomadic Health</div>
-                <p class="hero-description animate__animated animate__fadeInUp">The world's first intelligent backwash water purification system designed for plateau pastoral areas, responding to national echinococcosis prevention plans and directly protecting the health of millions of herders.</p>
-                
+                <div class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#problem">Problem</a></li>
+                        <li><a href="#solution">Solution</a></li>
+                        <li><a href="#metrics">Key Metrics</a></li>
+                        <li><a href="#verification">Verification</a></li>
+                        <li><a href="#strategy">Strategy</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact" class="btn btn-outline">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Smart Backwashing Safe Water System for Plateau Pastoral Areas</h1>
+                <div class="hero-tagline">Durable Purity for Nomadic Life</div>
+                <p>Our innovation targets the core issue of the persistent "safe drinking water gap" in the western plateau pastoral regions of China. Through four consecutive years of field-based philanthropic work since 2021, we observed that herders at remote summer grazing sites, lacking basic infrastructure, are forced to consume untreated surface water with high turbidity and contaminants like Echinococcus eggs, leading to high rates of waterborne diseases.</p>
+                <p>Our product is the first solution globally designed specifically for this context. Centered around a granted utility model patent, it innovatively achieves "one-button, dual-action" smart backwashing and complete pipeline drainage, simultaneously solving the key challenges of water purification in high-altitude pastoral areas.</p>
                 <div class="hero-buttons">
-                    <a href="#solution" class="btn btn-primary animate__animated animate__fadeInUp animate__delay-1s">
-                        <i class="fas fa-play-circle"></i> Explore Solution
-                    </a>
-                    <a href="#demo" class="btn btn-secondary animate__animated animate__fadeInUp animate__delay-2s">
-                        <i class="fas fa-video"></i> Watch Demo
-                    </a>
+                    <a href="#solution" class="btn">View Solution</a>
+                    <a href="#metrics" class="btn btn-outline">Key Metrics</a>
                 </div>
-            </div>
-            
-            <!-- 3D Product Showcase -->
-            <div class="product-showcase">
-                <div class="product-3d-container">
-                    <div class="product-3d">
-                        <div class="product-side product-front">
-                            <div class="product-screen">Smart Water System</div>
-                            <div class="product-button" onclick="showProductDemo()">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="product-side product-back"></div>
-                        <div class="product-side product-left"></div>
-                        <div class="product-side product-right"></div>
-                        <div class="product-side product-top"></div>
-                        <div class="product-side product-bottom"></div>
+                <div class="hero-visual">
+                    <div class="device-container">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Smart Water Purification Device" class="device-img">
                     </div>
                 </div>
             </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="scroll-indicator">
-                <div class="scroll-text">Scroll to Explore</div>
-                <div class="scroll-arrow"></div>
-            </div>
-        </div>
-        
-        <!-- Stats Overlay -->
-        <div class="stats-overlay">
-            <div class="stats-container">
-                <div class="stat-card">
-                    <div class="stat-number" id="stat1" data-suffix="x">0</div>
-                    <div class="stat-label">Filter Lifespan Extension</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="stat2" data-suffix="L">0</div>
-                    <div class="stat-label">Water Production per Charge</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="stat3" data-suffix="%">0</div>
-                    <div class="stat-label">Pathogen Removal Rate</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="stat4" data-suffix="M">0</div>
-                    <div class="stat-label">Potential Users</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo-container">
-            <div class="logo">
-                <div class="logo-inner">
-                    <i class="fas fa-tint"></i>
+        <!-- Problem Section -->
+        <section id="problem" class="problem-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>The Problem</h2>
+                    <div class="section-subtitle">Core challenges in plateau pastoral drinking water safety</div>
+                </div>
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <h3>Water Quality Issues</h3>
+                        <p>In remote northwestern China, residents in pastoral, border, and disaster-prone areas relying on scattered surface water commonly face turbid water and parasitic contamination. In high-altitude areas, parasite eggs cannot be killed, leading to various illnesses.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Existing Solutions Fail</h3>
+                        <p>Residential water purifiers require city electricity, impacting portability and maintainability. Current portable water purifiers often suffer from blockage and freeze-overs from turbid and cold water. Boiling water wastes fuel, is expensive, and cannot clean aqueous chemicals.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Infrastructure Gap</h3>
+                        <p>The "remote grazing sites" in plateau pastoral areas represent an "infrastructure vacuum" for safe drinking water. Herders lack access to safe, convenient drinking water during summer pasture production and daily life. Centralized water supply systems are impractical due to seasonal migration and high costs.</p>
+                    </div>
                 </div>
             </div>
-            <div class="logo-text">
-                <h1>ClearSpring</h1>
-                <p>SmartWater System</p>
-            </div>
-        </div>
-        
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-            <i class="fas fa-bars"></i>
-        </button>
-        
-        <div class="nav-links" id="navLinks">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#problem" class="nav-link">Problem</a>
-            <a href="#solution" class="nav-link">Solution</a>
-            <a href="#technology" class="nav-link">Technology</a>
-            <a href="#team" class="nav-link">Team</a>
-            <a href="#progress" class="nav-link">Progress</a>
-            <a href="#impact" class="nav-link">Impact</a>
-            <a href="#contact" class="btn btn-primary nav-btn">Contact</a>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Other Sections -->
-    <section id="problem" style="padding: 100px 2rem; background: var(--light-bg);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 class="section-title">The "Water Safety Blind Spot" in Plateau Pastoral Areas</h2>
-            <!-- Problem section content would go here -->
-        </div>
-    </section>
+        <!-- Solution Section -->
+        <section id="solution" class="solution-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Solution</h2>
+                    <div class="section-subtitle">Systemic solution designed for extreme environments</div>
+                </div>
+                <div class="solution-features">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-filter"></i></div>
+                        <h3>Patented Dual-Solenoid Backwash</h3>
+                        <p>Features a patented double-solenoid-powered backwash mechanism, using remaining water to wash residue, eliminating clogs and secondary contamination. Combined with solar-powered dual-mode electric power, multi-parameter sensing, and IoT connectivity.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-sun"></i></div>
+                        <h3>Off-Grid Solar Power</h3>
+                        <p>Solar-powered dual-mode electric power system ensures operation without grid electricity. Residential water purifiers lack needed electricity and are hard to carry. Portable ones have no automatic backwashing to extend filter lifespan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-snowflake"></i></div>
+                        <h3>Extreme Environment Adaptation</h3>
+                        <p>Housing uses ABS+PC composite material with IP54 rating. Key pipelines are food-grade silicone, ensuring reliability and freeze protection (via complete drainage) in environments from -20°C to 60°C.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+                        <h3>Smart Sensing & Control</h3>
+                        <p>Centered on a microcontroller (ESP8266/STM32), integrates flow, temperature, and TDS sensors for real-time monitoring. System intelligently calculates usage and auto-triggers the backwash cycle, employing algorithms for efficient low-power management.</p>
+                    </div>
+                </div>
+                
+                <div class="uvp-section" style="margin-top: 80px;">
+                    <div class="uvp-content">
+                        <h3 style="color: var(--aqua-tech); text-align: center; margin-bottom: 25px;">Unique Value Proposition</h3>
+                        <p style="text-align: center; color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.8;">
+                            Residential water purifiers lack the needed electricity and are hard to carry. Portable ones have no automatic backwashing to extend filter lifespan, making both unsuitable. Our product features automatic backwashing powered by the sun all in a small box, making it portable, reliable, and eco-friendly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics Section -->
+        <section id="metrics" class="metrics-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Key Metrics</h2>
+                    <div class="section-subtitle">Data-driven performance validation</div>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-number">2.3X</div>
+                        <div class="metric-desc">Filter Lifespan Extended</div>
+                        <p>Filter lifespan extended by 2.3 times (from 262L to 600L+); filter cost reduction of >70%.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">>95%</div>
+                        <div class="metric-desc">Turbidity Removal Rate</div>
+                        <p>Turbidity removal rate of >95% (<1NTU); E. coli elimination of ≥99.99%.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">-20°C~60°C</div>
+                        <div class="metric-desc">Operating Temperature</div>
+                        <p>Reliable operation from -20°C to 60°C with IP54 protection.</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-number">600L</div>
+                        <div class="metric-desc">Water Production When Fully Charged</div>
+                        <p>480-600L water production when charged full, meeting a family's needs for several days.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 80px; background: linear-gradient(145deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.05)); padding: 50px; border-radius: 20px; border: 1px solid rgba(0, 212, 255, 0.1); backdrop-filter: blur(10px);">
+                    <h3 style="text-align: center; color: var(--aqua-tech); margin-bottom: 40px; font-size: 1.8rem;">Sustainable Advantage</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                        <div>
+                            <h4 style="color: var(--wave-teal); margin-bottom: 15px;">Core Technology Patent Protection</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">The core innovation is patented, protected by law. Our product design objectives have been approved by local health supervision authorities.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--wave-teal); margin-bottom: 15px;">Deep Field Research</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">Our team did extensive research in Qinghai and Sichuan, building trust with local herders. Each month, we collect user feedback to improve our algorithms.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--wave-teal); margin-bottom: 15px;">Authoritative Certification</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">Aligning with the NCDPA document and receiving certification from authoritative institutions, the products earned the opportunity for direct distribution via local government.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Verification Progress -->
+        <section id="verification" class="verification-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Verification & Progress</h2>
+                    <div class="section-subtitle">From laboratory validation to field application</div>
+                </div>
+                
+                <div class="verification-timeline">
+                    <div class="timeline-item">
+                        <h3>Verification Methods</h3>
+                        <div class="timeline-content">
+                            <p><strong>Three-Generation Prototype Iteration:</strong> From V1.0 proof-of-concept, V2.0 functional integration & automation testbed, to the final V3.0 environmentally hardened engineering prototype.</p>
+                            <p><strong>Quantitative Efficacy Validation:</strong> For the core "filter clogging" issue, strict comparative experiments under identical high-turbidity conditions (~100 NTU). Data from over 200 purification cycles quantitatively verifies the >2.3x filter life extension.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Project Progress</h3>
+                        <div class="timeline-content">
+                            <p><strong>Technology Readiness:</strong> Successfully developed a fully functional, compact (4.8 kg dry weight), IP54-rated V3.0 engineering prototype with an operating temperature range of -20°C to 60°C.</p>
+                            <p><strong>IP Portfolio:</strong> Established an initial IP barrier with "one utility model, one invention" patent filings.</p>
+                            <p><strong>Solution Pathway Development:</strong> Completed Bill of Materials cost analysis (~¥1000/unit), identified 30-40% cost reductions at scale, and explored hybrid rollout strategy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Strategy -->
+        <section id="strategy" class="strategy-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Market Entry Strategy</h2>
+                    <div class="section-subtitle">Philanthropy-led pilot, followed by dual-track expansion</div>
+                </div>
+                
+                <div class="strategy-steps">
+                    <div class="strategy-card">
+                        <h3>Phase 1: Pilot (0-1 year)</h3>
+                        <p>Partner deeply with foundations and NGOs focused on echinococcosis control and pastoral livelihoods. Conduct a pilot deployment of ~100 units for free in 1-2 communities in Qinghai where we have established trust.</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h3>Phase 2: Expansion (1-3 years)</h3>
+                        <p>Execute a dual-track approach. Track A: Leverage pilot case to engage local governments for procurement. Track B: For secondary markets, adapt product and sell through specialized B2B/B2C channels.</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h3>Channel Strategy</h3>
+                        <p>The initiative focuses on improving welfare rather than profit. Aligning with national policies and receiving certification enables direct distribution via local government (most effective method). Estimated 40% higher initial penetration efficiency vs. commercial launch.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 80px;">
+                    <h3 style="color: var(--aqua-tech); text-align: center; margin-bottom: 30px;">Customer Segments & Early Adopters</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                        <div style="background: rgba(0, 102, 204, 0.1); padding: 30px; border-radius: 15px; border: 1px solid rgba(0, 212, 255, 0.2);">
+                            <h4 style="color: var(--wave-teal); margin-bottom: 15px;">Target Customers</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">2 million herders in remote high-altitude regions. Despite dispersed population, they desperately require reliable access to clean water, prioritizing extreme durability for long-term nomadic activities.</p>
+                        </div>
+                        <div style="background: rgba(0, 102, 204, 0.1); padding: 30px; border-radius: 15px; border: 1px solid rgba(0, 212, 255, 0.2);">
+                            <h4 style="color: var(--wave-teal); margin-bottom: 15px;">Early Adopters</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">Relatively younger herders (under 30) and those with most significant water demand. Representing 5% of population, these early adopters will demonstrate how our innovation resolves issues, driving broader utilization.</p>
+                        </div>
+                        <div style="background: rgba(0, 102, 204, 0.1); padding: 30px; border-radius: 15px; border: 1px solid rgba(0, 212, 255, 0.2);">
+                            <h4 style="color: var(--wave-teal); margin-bottom: 15px;">Business Model</h4>
+                            <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.7;">Gross profit margin preliminarily set at 40%. Team expects to complete early user accumulation (approx. 2,000 units) within two years. Product design approved by local health authorities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Team</h2>
+                    <div class="section-subtitle">Interdisciplinary technology innovation, rooted in philanthropy, realized through engineering</div>
+                </div>
+                <div class="team-members">
+                    <div class="member-card">
+                        <div class="member-header"></div>
+                        <div class="member-avatar">Y</div>
+                        <h3>Yi yi</h3>
+                        <div class="member-role">Project Initiation & Requirements</div>
+                        <p class="member-bio">Led project conception, overall planning, field research, and partnership development, translating on-ground insights into clear technical requirements; contributed to core patented hydraulic design.</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-header"></div>
+                        <div class="member-avatar">M</div>
+                        <h3>XIAOTONG MI</h3>
+                        <div class="member-role">Technical R&D & System Integration</div>
+                        <p class="member-bio">Spearheaded prototype iteration and environmental adaptability optimization. Developed microcontroller-based smart sensing and control system, enabling automated, low-power operation.</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-header"></div>
+                        <div class="member-avatar">L</div>
+                        <h3>Muyan Li</h3>
+                        <div class="member-role">Engineering Implementation</div>
+                        <p class="member-bio">Co-led prototype iteration and environmental adaptability optimization with XIAOTONG MI, ensuring product reliability and durability.</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-header"></div>
+                        <div class="member-avatar">D</div>
+                        <h3>Zhihan Dong</h3>
+                        <div class="member-role">Data Analysis & Efficacy Validation</div>
+                        <p class="member-bio">Co-designed and executed rigorous comparative experiments with Yi yi, conducting efficacy validation and quantitative data analysis.</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-header"></div>
+                        <div class="member-avatar">Q</div>
+                        <h3>Jingyi Qian</h3>
+                        <div class="member-role">Financial Planning & Partnership</div>
+                        <p class="member-bio">Responsible for financial modeling, cost control, and partnership promotion, ensuring project commercial sustainability.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 80px; text-align: center;">
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto 40px; line-height: 1.8;">
+                        The team originated from a western pastoral area outreach and material donation initiative launched in 2021. Through over 18 donation activities, delivering more than 20,000 kilograms of supplies, and deep immersion in herder communities, members evolved from initial aid providers to keen observers and dedicated problem-solvers.
+                    </p>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                        The team combines deep social awareness with strong engineering execution capability. Its most valuable asset is unique frontline field experience, yielding genuine understanding of user needs far beyond laboratory assumptions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer & Contact -->
+        <footer id="contact">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-about">
+                        <div class="footer-logo">Pure<span>Pasture</span></div>
+                        <p>We are committed to solving safe drinking water challenges in plateau pastoral areas through technological innovation, practicing "technology for social good," and contributing to rural revitalization and Healthy China.</p>
+                        <p>The project is protected by patents, with key lab-verified data, and plans a hybrid rollout strategy of "philanthropic piloting, followed by government procurement, supplemented by commercial derivatives."</p>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Address: XXX City</p>
+                            <p><i class="fas fa-phone"></i> Phone: 12345678910</p>
+                            <p><i class="fas fa-envelope"></i> Email: contact@purepasture.com</p>
+                        </div>
+                        <div style="margin-top: 30px;">
+                            <a href="#" class="btn" style="background: linear-gradient(90deg, var(--wave-teal), var(--aqua-tech));">Download Business Plan</a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#problem">Problem</a></li>
+                            <li><a href="#solution">Solution</a></li>
+                            <li><a href="#metrics">Key Metrics</a></li>
+                            <li><a href="#team">Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 PurePasture Smart Backwashing Safe Water System for Plateau Pastoral Areas. Conrad Challenge Project. All content strictly based on innovation brief documents, data accurate and verified.</p>
+                    <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.7;">This website is for competition display purposes; contact information is placeholder.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <script>
-        // Create animated particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Random properties
-                const size = Math.random() * 3 + 1;
-                const left = Math.random() * 100;
-                const animationDuration = Math.random() * 20 + 10;
-                const animationDelay = Math.random() * 20;
-                const opacity = Math.random() * 0.5 + 0.2;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${left}%`;
-                particle.style.animationDuration = `${animationDuration}s`;
-                particle.style.animationDelay = `${animationDelay}s`;
-                particle.style.opacity = opacity;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
-        // Navigation functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
         });
-        
-        // Navbar scroll effect
+
+        // Close menu when clicking menu items (mobile)
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Header shadow on scroll
         window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+                header.style.backgroundColor = 'rgba(10, 26, 58, 0.95)';
             } else {
-                navbar.classList.remove('scrolled');
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.2)';
+                header.style.backgroundColor = 'rgba(10, 26, 58, 0.85)';
             }
         });
-        
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+
+        // Create flowing lines
+        function createFlowLines() {
+            const flowLinesContainer = document.getElementById('flowLines');
+            const lineCount = 15;
+            
+            for (let i = 0; i < lineCount; i++) {
+                const line = document.createElement('div');
+                line.classList.add('flow-line');
                 
-                if(this.getAttribute('href') === '#') return;
+                // Random position and size
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
+                const width = 100 + Math.random() * 200;
+                const duration = 15 + Math.random() * 15;
+                const delay = Math.random() * 10;
                 
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                line.style.top = `${top}%`;
+                line.style.left = `${left}%`;
+                line.style.width = `${width}px`;
+                line.style.animationDuration = `${duration}s`;
+                line.style.animationDelay = `${delay}s`;
+                line.style.opacity = 0.05 + Math.random() * 0.1;
                 
-                if(targetElement) {
-                    // Close mobile menu
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                // Random angle
+                const angle = Math.random() * 360;
+                line.style.transform = `rotate(${angle}deg)`;
+                
+                flowLinesContainer.appendChild(line);
+            }
+        }
+
+        // Create dynamic light dots
+        function createLightDots() {
+            const lightDotsContainer = document.getElementById('lightDots');
+            const dotCount = 50;
+            
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('light-dot');
+                
+                // Random position and animation
+                const left = Math.random() * 100;
+                const delay = Math.random() * 8;
+                const duration = 5 + Math.random() * 5;
+                
+                dot.style.left = `${left}%`;
+                dot.style.animationDelay = `${delay}s`;
+                dot.style.animationDuration = `${duration}s`;
+                
+                // Random size
+                const size = 2 + Math.random() * 4;
+                dot.style.width = `${size}px`;
+                dot.style.height = `${size}px`;
+                
+                lightDotsContainer.appendChild(dot);
+            }
+        }
+
+        // Create water ripple effects
+        function createWaterRipples() {
+            const waterRipplesContainer = document.getElementById('waterRipples');
+            const rippleCount = 5;
+            
+            for (let i = 0; i < rippleCount; i++) {
+                const ripple = document.createElement('div');
+                ripple.classList.add('ripple');
+                
+                // Random position and animation
+                const left = 20 + Math.random() * 60;
+                const top = 20 + Math.random() * 60;
+                const delay = Math.random() * 15;
+                const duration = 10 + Math.random() * 10;
+                
+                ripple.style.left = `${left}%`;
+                ripple.style.top = `${top}%`;
+                ripple.style.animationDelay = `${delay}s`;
+                ripple.style.animationDuration = `${duration}s`;
+                
+                waterRipplesContainer.appendChild(ripple);
+            }
+        }
+
+        // Create data stream effect
+        function createDataStream() {
+            const dataStreamContainer = document.getElementById('dataStream');
+            const dataBits = ['0', '1', '0', '1', '0', '1', 'P', 'U', 'R', 'E', '2', '3', 'X', '>', '9', '5', '%'];
+            
+            // Create multiple data stream columns
+            for (let col = 0; col < 8; col++) {
+                const left = 10 + col * 10;
+                
+                for (let i = 0; i < 15; i++) {
+                    const bit = document.createElement('div');
+                    bit.classList.add('data-bit');
                     
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                    // Randomly select data bit
+                    const randomBit = dataBits[Math.floor(Math.random() * dataBits.length)];
+                    bit.textContent = randomBit;
+                    
+                    // Random position and animation
+                    const leftOffset = left + Math.random() * 5;
+                    const delay = Math.random() * 5;
+                    const duration = 5 + Math.random() * 10;
+                    const fontSize = 10 + Math.random() * 8;
+                    
+                    bit.style.left = `${leftOffset}%`;
+                    bit.style.animationDelay = `${delay}s`;
+                    bit.style.animationDuration = `${duration}s`;
+                    bit.style.fontSize = `${fontSize}px`;
+                    bit.style.opacity = 0.3 + Math.random() * 0.4;
+                    
+                    dataStreamContainer.appendChild(bit);
                 }
-            });
-        });
-        
-        // Animated counter
-        function animateCounters() {
-            const statElements = [
-                { element: document.getElementById('stat1'), target: 2.3, increment: 0.05, duration: 1800, suffix: 'x' },
-                { element: document.getElementById('stat2'), target: 600, increment: 10, duration: 1800, suffix: 'L' },
-                { element: document.getElementById('stat3'), target: 99.99, increment: 1.5, duration: 1800, suffix: '%' },
-                { element: document.getElementById('stat4'), target: 2, increment: 0.05, duration: 1800, suffix: 'M' }
-            ];
-            
-            statElements.forEach(stat => {
-                let current = 0;
-                const stepTime = Math.abs(Math.floor(stat.duration / (stat.target / stat.increment)));
-                const timer = setInterval(() => {
-                    current += stat.increment;
-                    if (current >= stat.target) {
-                        stat.element.textContent = stat.target;
-                        clearInterval(timer);
-                    } else {
-                        stat.element.textContent = current.toFixed(stat.target % 1 !== 0 ? 1 : 0);
-                    }
-                }, stepTime);
-            });
-        }
-        
-        // Product demo
-        function showProductDemo() {
-            const modal = document.createElement('div');
-            modal.style.position = 'fixed';
-            modal.style.top = '0';
-            modal.style.left = '0';
-            modal.style.width = '100%';
-            modal.style.height = '100%';
-            modal.style.backgroundColor = 'rgba(0,0,0,0.8)';
-            modal.style.zIndex = '2000';
-            modal.style.display = 'flex';
-            modal.style.alignItems = 'center';
-            modal.style.justifyContent = 'center';
-            modal.style.backdropFilter = 'blur(10px)';
-            
-            modal.innerHTML = `
-                <div style="background: var(--gradient-dark); padding: 3rem; border-radius: 25px; max-width: 600px; text-align: center; color: white; position: relative;">
-                    <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: white; font-size: 2rem; cursor: pointer;">×</button>
-                    <h3 style="margin-bottom: 1.5rem; color: var(--light-teal);">Product Demonstration</h3>
-                    <p style="margin-bottom: 1.5rem; line-height: 1.6;">The ClearSpring SmartWater system operates through a simple 5-step process:</p>
-                    <ol style="text-align: left; margin-bottom: 2rem; padding-left: 1.5rem;">
-                        <li style="margin-bottom: 0.8rem;">Raw water enters the three-stage filtration system (PP cotton, activated carbon, ultrafiltration membrane)</li>
-                        <li style="margin-bottom: 0.8rem;">Intelligent sensors monitor water quality and flow rate</li>
-                        <li style="margin-bottom: 0.8rem;">The system automatically calculates and triggers the backwash process</li>
-                        <li style="margin-bottom: 0.8rem;">Completes filter reverse flushing and pipeline drainage</li>
-                        <li style="margin-bottom: 0.8rem;">Real-time status information display</li>
-                    </ol>
-                    <p><strong>Experimental Data:</strong> When treating water with turbidity of approximately 100 NTU, the backwash function extends the effective lifespan of the pre-filter by more than 2.3 times.</p>
-                </div>
-            `;
-            
-            document.body.appendChild(modal);
-            
-            // Close modal when clicking outside
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.remove();
-                }
-            });
-        }
-        
-        // Initialize on load
-        window.addEventListener('load', () => {
-            // Create particles
-            createParticles();
-            
-            // Start counter animation after a delay
-            setTimeout(animateCounters, 1000);
-            
-            // Add entrance animations to elements
-            document.querySelectorAll('.hero-logo, .hero-title, .hero-subtitle, .hero-description, .hero-buttons').forEach((el, index) => {
-                el.style.animationDelay = `${index * 0.3}s`;
-            });
-        });
-        
-        // Parallax effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero-cover');
-            const product = document.querySelector('.product-3d-container');
-            
-            if (hero && product) {
-                const rate = scrolled * 0.5;
-                hero.style.transform = `translateY(${rate}px)`;
-                
-                // Subtle rotation of product on scroll
-                const rotation = scrolled * 0.05;
-                product.style.transform = `translateY(${rate * 0.2}px) rotateX(${10 + rotation * 0.1}deg)`;
             }
+        }
+
+        // Number animation for metrics
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const metricNumber = entry.target.querySelector('.metric-number');
+                    if (metricNumber && !metricNumber.classList.contains('animated')) {
+                        const originalText = metricNumber.textContent;
+                        const isPercentage = originalText.includes('%');
+                        const isX = originalText.includes('X');
+                        const isPlus = originalText.includes('+');
+                        const isRange = originalText.includes('°C') || originalText.includes('~');
+                        const numericValue = parseFloat(originalText.replace(/[^0-9.]/g, ''));
+                        
+                        // Skip animation for range values
+                        if (isRange) {
+                            metricNumber.classList.add('animated');
+                            return;
+                        }
+                        
+                        let current = 0;
+                        const increment = numericValue / 40;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= numericValue) {
+                                metricNumber.textContent = originalText;
+                                clearInterval(timer);
+                                metricNumber.classList.add('animated');
+                                
+                                // Add pulse animation
+                                metricNumber.style.animation = 'pulse 1s ease';
+                                setTimeout(() => {
+                                    metricNumber.style.animation = '';
+                                }, 1000);
+                            } else {
+                                let displayValue = Math.floor(current);
+                                if (isPercentage) {
+                                    metricNumber.textContent = `${displayValue}%`;
+                                } else if (isX) {
+                                    metricNumber.textContent = `${displayValue.toFixed(1)}X`;
+                                } else if (isPlus) {
+                                    metricNumber.textContent = `${displayValue}+`;
+                                } else {
+                                    metricNumber.textContent = displayValue;
+                                }
+                            }
+                        }, 40);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.metric-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Initialize all background animations when page loads
+        window.addEventListener('load', () => {
+            createFlowLines();
+            createLightDots();
+            createWaterRipples();
+            createDataStream();
+            
+            // Add CSS animation keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.1); }
+                    100% { transform: scale(1); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Interactive effect on mouse movement
+            document.addEventListener('mousemove', (e) => {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                // Slight movement of background grid
+                const grid = document.querySelector('.grid-background');
+                grid.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+            });
         });
     </script>
 </body>
