@@ -758,72 +758,87 @@
             margin-top: 40px;
         }
 
-        /* ===== Verification Progress ===== */
+        /* ===== Verification Progress - UPDATED ===== */
         .verification-section {
             position: relative;
         }
 
-        .verification-timeline {
-            display: flex;
-            justify-content: space-between;
+        /* 移除旧的timeline样式，添加新的对称布局 */
+        .verification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
             margin-top: 60px;
-            position: relative;
         }
 
-        .timeline-item {
-            flex: 1;
+        .verification-card {
+            background: linear-gradient(145deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.05));
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow-tech);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .verification-card h3 {
+            color: var(--aqua-tech);
+            margin-bottom: 25px;
+            font-size: 1.6rem;
             text-align: center;
-            padding: 30px;
             position: relative;
+            padding-bottom: 15px;
         }
 
-        .timeline-item::before {
+        .verification-card h3::after {
             content: '';
             position: absolute;
-            top: 40px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--aqua-tech);
-            border-radius: 50%;
-            z-index: 2;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
-            animation: timeline-pulse 2s infinite;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--aqua-tech), var(--wave-teal));
+            border-radius: 2px;
         }
 
-        @keyframes timeline-pulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.8); }
-            50% { box-shadow: 0 0 30px rgba(0, 212, 255, 1); }
+        .verification-content {
+            margin-top: 20px;
         }
 
-        .timeline-item::after {
-            content: '';
+        .progress-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .progress-item::before {
+            content: '✓';
             position: absolute;
-            top: 50px;
-            left: 50%;
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--aqua-tech), transparent);
-            z-index: 1;
+            left: 0;
+            top: 2px;
+            color: var(--aqua-tech);
+            font-weight: bold;
+            font-size: 1.1rem;
         }
 
-        .timeline-item:last-child::after {
-            display: none;
+        .progress-item h4 {
+            color: var(--wave-teal);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
-        .timeline-content {
-            margin-top: 60px;
-            padding: 25px;
-            background: rgba(0, 102, 204, 0.1);
-            border-radius: 15px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+        .progress-item p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         /* ===== Market Strategy ===== */
@@ -1086,16 +1101,8 @@
                 width: 100%;
                 max-width: 300px;
             }
-            .verification-timeline {
-                flex-direction: column;
-            }
-            .timeline-item::after {
-                left: 50px;
-                top: 40px;
-                height: calc(100% + 40px);
-            }
-            .timeline-item::before {
-                left: 50px;
+            .verification-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1115,6 +1122,9 @@
             }
             .section-title h2 {
                 font-size: 2.2rem;
+            }
+            .verification-card {
+                padding: 30px 20px;
             }
         }
 
@@ -1305,7 +1315,7 @@
             </div>
         </section>
 
-        <!-- Verification Progress -->
+        <!-- Verification Progress - UPDATED -->
         <section id="verification" class="verification-section">
             <div class="container">
                 <div class="section-title">
@@ -1313,21 +1323,49 @@
                     <div class="section-subtitle">From laboratory validation to field application</div>
                 </div>
                 
-                <div class="verification-timeline">
-                    <div class="timeline-item">
+                <div class="verification-grid">
+                    <div class="verification-card">
                         <h3>Verification Methods</h3>
-                        <div class="timeline-content">
-                            <p><strong>Three-Generation Prototype Iteration:</strong> From V1.0 proof-of-concept, V2.0 functional integration & automation testbed, to the final V3.0 environmentally hardened engineering prototype.</p>
-                            <p><strong>Quantitative Efficacy Validation:</strong> For the core "filter clogging" issue, strict comparative experiments under identical high-turbidity conditions (~100 NTU). Data from over 200 purification cycles quantitatively verifies the >2.3x filter life extension.</p>
+                        <div class="verification-content">
+                            <div class="progress-item">
+                                <h4>Three-Generation Prototype Iteration</h4>
+                                <p>From V1.0 proof-of-concept, V2.0 functional integration & automation testbed, to the final V3.0 environmentally hardened engineering prototype.</p>
+                            </div>
+                            <div class="progress-item">
+                                <h4>Quantitative Efficacy Validation</h4>
+                                <p>For the core "filter clogging" issue, strict comparative experiments under identical high-turbidity conditions (~100 NTU). Data from over 200 purification cycles quantitatively verifies the >2.3x filter life extension.</p>
+                            </div>
+                            <div class="progress-item">
+                                <h4>Environmental Testing</h4>
+                                <p>Comprehensive testing across temperature ranges (-20°C to 60°C) and durability assessments to ensure reliability in extreme plateau conditions.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="verification-card">
                         <h3>Project Progress</h3>
-                        <div class="timeline-content">
-                            <p><strong>Technology Readiness:</strong> Successfully developed a fully functional, compact (4.8 kg dry weight), IP54-rated V3.0 engineering prototype with an operating temperature range of -20°C to 60°C.</p>
-                            <p><strong>IP Portfolio:</strong> Established an initial IP barrier with "one utility model, one invention" patent filings.</p>
-                            <p><strong>Solution Pathway Development:</strong> Completed Bill of Materials cost analysis (~¥1000/unit), identified 30-40% cost reductions at scale, and explored hybrid rollout strategy.</p>
+                        <div class="verification-content">
+                            <div class="progress-item">
+                                <h4>Technology Readiness</h4>
+                                <p>Successfully developed a fully functional, compact (4.8 kg dry weight), IP54-rated V3.0 engineering prototype with an operating temperature range of -20°C to 60°C.</p>
+                            </div>
+                            <div class="progress-item">
+                                <h4>IP Portfolio</h4>
+                                <p>Established an initial IP barrier with "one utility model, one invention" patent filings to protect our core innovations.</p>
+                            </div>
+                            <div class="progress-item">
+                                <h4>Solution Pathway Development</h4>
+                                <p>Completed Bill of Materials cost analysis (~¥1000/unit), identified 30-40% cost reductions at scale, and explored hybrid rollout strategy combining philanthropic and commercial approaches.</p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 60px; text-align: center;">
+                    <div style="background: linear-gradient(145deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 255, 0.05)); padding: 40px; border-radius: 20px; border: 1px solid rgba(0, 212, 255, 0.1); backdrop-filter: blur(10px);">
+                        <h3 style="color: var(--aqua-tech); margin-bottom: 20px;">Next Steps & Future Roadmap</h3>
+                        <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                            Our immediate focus is on pilot deployment in 1-2 Qinghai communities where we have established trust, followed by scaling through government partnerships and commercial channels. Continuous user feedback will drive iterative improvements to our algorithms and hardware design.
+                        </p>
                     </div>
                 </div>
             </div>
